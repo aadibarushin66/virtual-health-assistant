@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Assistant</title>
+    
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #141e30, #00ff99);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        /* Splash Screen */
+        #splash-screen {
+            animation: fadeIn 2s ease-in-out;
+        }
+        .logo {
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: glow 2s infinite alternate;
+        }
+        #continue-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00ff99;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #continue-btn:hover {
+            background-color: #00cc77;
+        }
+
+        /* Login Page (Hidden by Default) */
+        .hidden {
+            display: none;
+        }
+        #login-page {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        #login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00ff99;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        #login-form button:hover {
+            background-color: #00cc77;
+        }
+
+        /* Animations */
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #00ff99; }
+            100% { text-shadow: 0 0 20px #00ff99; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="logo">SympAI</div>
+        <p id="intro-text">Hi! I'm SympAI, your virtual health assistant.</p>
+        <button id="continue-btn">Tap to Continue</button>
+    </div>
+
+    <!-- Login Page (Hidden Initially) -->
+    <div id="login-page" class="hidden">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" placeholder="Enter your email" required>
+            <input type="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("continue-btn").addEventListener("click", function() {
+            document.getElementById("splash-screen").style.display = "none"; // Hide splash screen
+            document.getElementById("login-page").classList.remove("hidden"); // Show login page
+        });
+
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Login Successful! (You can redirect to the dashboard here)");
+        });
+    </script>
+
+</body>
+</html>
