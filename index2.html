@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Health Assistant</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #00ff99);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }.dashboard-container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        width: 80%;
+        max-width: 600px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .dashboard-options {
+        margin-top: 20px;
+    }
+
+    .dashboard-options button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        background-color: #00ff99;
+        color: black;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .dashboard-options button:hover {
+        background-color: #00cc77;
+    }
+
+    #logout {
+        background-color: red;
+        color: white;
+    }
+    #logout:hover {
+        background-color: darkred;
+    }
+</style>
+
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome to SympAI</h1>
+        <p>Your AI-powered virtual health assistant.</p><div class="dashboard-options">
+        <button onclick="alert('Symptom Checker Coming Soon!')">Symptom Checker</button>
+        <button onclick="alert('Mental Health Support Coming Soon!')">Mental Health Support</button>
+        <button onclick="alert('Health Tips Coming Soon!')">Health Tips</button>
+    </div>
+    
+    <button id="logout" onclick="logout()">Logout</button>
+</div>
+
+<script>
+    function logout() {
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
